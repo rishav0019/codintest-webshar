@@ -1,0 +1,56 @@
+<div class="login_sec">
+    <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+    <div class="login">
+       <!-- <div class="email" >
+        <label for="email">Enter Email</label>
+        <input type="text" formControlName="email">
+
+       </div> -->
+       <div class="email">
+        <label for="email">Enter Password</label>
+
+        <input type="text" formControlName="password">
+        <div class="week_pass" *ngIf="form.password.errors && form.password.errors.required">
+
+            <span>week password</span>
+            <div class="event-bar" [ngStyle]="{'width':form.password.errors.successBarWidth,'backgroundColor':'black'}"
+        ></div>
+        </div>
+        <div class="week_pass" *ngIf="form.password.errors && !form.password.errors.required">
+
+            <span>week password</span>
+            <div class="event-bar" [ngStyle]="{'width':form.password.errors.successBarWidth,'backgroundColor':'green'}"
+        ></div>
+        </div>
+        <div class="strong_pass" *ngIf="!form.password.errors">
+           <span> strong password</span>
+            <div class="event-bar" [ngStyle]="{'width':'100%','backgroundColor':'green'}"
+        ></div>
+        </div>
+        
+       </div>
+       <div class="error" *ngIf=" form.password.errors">
+        <span>Rules for making password strong</span>
+        <ul *ngIf="form.password.errors?.required ">
+            <li >Use minimum 6 characters  </li>
+            <li>Use lowercse letters</li>
+            <li>Use uppercase letters</li>
+            <li>Use numbers</li>
+            <li>Use Punctuations</li>
+
+        </ul>
+        <ul *ngIf="form.password.dirty && !form.password.errors?.required">
+            <li *ngIf="form.password.errors.minlength">Use minimum 6 characters  </li>
+            <li *ngIf="form.password.errors.passwordLowerError">Use lowercse letters</li>
+            <li *ngIf="form.password.errors.passwordUpperError">Use uppercase letters</li>
+            <li *ngIf="form.password.errors.passwordNumberError">Use numbers</li>
+            <li *ngIf="form.password.errors.passwordSpecialCaseError">Use Punctuations </li>
+            
+        </ul>
+       </div>
+    </div>
+    <div class="submit_btn">
+        <button>Submit</button>
+    </div>
+</form>
+</div>

@@ -1,0 +1,36 @@
+
+.login_sec{
+    width: 40rem;
+    margin: auto ;
+}
+.login{
+    /* display: flex; */
+}
+.email{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.submit_btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.error{
+    border: 1px solid black;
+    padding: 1rem;
+}
+.strong_pass{
+    /* border-bottom: 2px solid green; */
+}
+.week_pass{
+    /* border-bottom: 2px solid black; */
+
+}
+.event-bar {
+   
+    height: 5px;
+    font-size: 0.75rem;
+    background-color: red;
+    
+  }
